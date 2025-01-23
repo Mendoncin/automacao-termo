@@ -39,7 +39,7 @@ pyautogui.press("enter")
 
 pyautogui.click(x=946, y=616)
 
-pyautogui.hotkey('ctrl', 'shift', 'n')
+# pyautogui.hotkey('ctrl', 'shift', 'n')    para teste
 
 pyautogui.write(url)
 pyautogui.press('enter')
