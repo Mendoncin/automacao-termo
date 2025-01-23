@@ -18,11 +18,15 @@ lista1 = []
 
 for palavra in palavras:
     if len(palavra) == 5:
-        palavra_sem_acento = ''.join(
-            char for char in unicodedata.normalize('NFKD', palavra) 
-            if not unicodedata.combining(char)
-        )
-        lista1.append(palavra_sem_acento)
+        palavra = unicodedata.normalize('NFKD', palavra)
+        caracteres_sem_acento = []
+        for char in palavra:
+            if not unicodedata.combining(char):
+                caracteres_sem_acento.append(char)
+        palavra = ''.join(caracteres_sem_acento)
+        lista1.append(palavra)
+
+
 
 lista1 = list(set(lista1))
 
@@ -35,7 +39,7 @@ pyautogui.press("enter")
 
 pyautogui.click(x=946, y=616)
 
-# pyautogui.hotkey('ctrl', 'shift', 'n')
+pyautogui.hotkey('ctrl', 'shift', 'n')
 
 pyautogui.write(url)
 pyautogui.press('enter')
