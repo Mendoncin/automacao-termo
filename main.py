@@ -1,8 +1,5 @@
 import pyautogui
 import cv2
-import numpy as np
-import unicodedata
-
 
 url = 'https://term.ooo/'
 pyautogui.PAUSE = 0.7
@@ -27,11 +24,7 @@ pyautogui.press("enter")
 
 pyautogui.click(x=946, y=616)
 
-<<<<<<< HEAD
-pyautogui.hotkey('ctrl', 'shift', 'n')      #para testar
-=======
-# pyautogui.hotkey('ctrl', 'shift', 'n')    para teste
->>>>>>> 6713b159597d80c27e619a722e8710e628865d0b
+# pyautogui.hotkey('ctrl', 'shift', 'n')      #para testar
 
 pyautogui.write(url)
 pyautogui.press('enter')
@@ -63,6 +56,7 @@ for linha in range(5):
         x = x_inicial + (coluna * incremento)
         y = y_inicial + (linha * incremento) 
         coordenadas.append([x, y])
+
 contador = 0
 
 for x, y in coordenadas:
@@ -72,7 +66,6 @@ for x, y in coordenadas:
     hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     h, s, v = hsv_image[y, x]
 
-    pixel_hsv = np.array([h, s, v])    
     if h == 171:
         for palavra in lista1:
             if not letras[contador] in palavra:
